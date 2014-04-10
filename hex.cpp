@@ -503,7 +503,6 @@ int main() {
 	switch (game_mode) {
 		case 1:
 			std::cout << "blue goes first\n";
-			//game.add_players(new HumanPlayer("red", node::red), new HumanPlayer("blue", node::blue));
 			players[0] = new HumanPlayer("red", node::red);
 			players[1] = new HumanPlayer("blue", node::blue);
 			break;
@@ -515,12 +514,10 @@ int main() {
 				std::cin >> color;
 
 				if (color == "red") {
-					//game.add_players(new HumanPlayer(color, node::red), new RandomComputerPlayer("blue-random", node::blue));
 					players[0] = new HumanPlayer("red", node::red);
 					players[1] = new RandomComputerPlayer("blue-random", node::blue);
 					break;
 				} else if (color == "blue") {
-					//game.add_players(new RandomComputerPlayer("red-random", node::red), new HumanPlayer(color, node::blue));
 					players[0] = new RandomComputerPlayer("red-random", node::red);
 					players[1] = new HumanPlayer("blue", node::blue);
 					break;
@@ -535,12 +532,10 @@ int main() {
 				std::cin >> color;
 
 				if (color == "red") {
-					//game.add_players(new HumanPlayer(color, node::red), new MonteCarloComputerPlayer("blue-monte", node::blue));
 					players[0] = new HumanPlayer("red", node::red);
 					players[1] = new MonteCarloComputerPlayer("blue-MC", node::blue);
 					break;
 				} else if (color == "blue") {
-					//game.add_players(new MonteCarloComputerPlayer("red-monte", node::red), new HumanPlayer(color, node::blue));
 					players[0] = new MonteCarloComputerPlayer("red-MC", node::red);
 					players[1] = new HumanPlayer("blue", node::blue);
 					break;
@@ -548,12 +543,10 @@ int main() {
 			} while (true);
 			break;
 		case 4:
-			//game.add_players(new RandomComputerPlayer("red-random", node::red), new RandomComputerPlayer("blue-random", node::blue));
 			players[0] = new RandomComputerPlayer("red-random", node::red);
 			players[1] = new RandomComputerPlayer("blue-random", node::blue);
 			break;
 		case 5:
-			//game.add_players(new RandomComputerPlayer("red-random", node::red), new MonteCarloComputerPlayer("blue-monte", node::blue));
 			if (ranged_rand(0, 1)) {
 				players[0] = new RandomComputerPlayer("red-random", node::red);
 				players[1] = new MonteCarloComputerPlayer("blue-MC", node::blue);
@@ -563,7 +556,6 @@ int main() {
 			}
 			break;
 		case 6:
-			//game.add_players(new MonteCarloComputerPlayer("red-monte", node::red), new MonteCarloComputerPlayer("blue-monte", node::blue));
 			players[0] = new MonteCarloComputerPlayer("red-MC", node::red);
 			players[1] = new MonteCarloComputerPlayer("blue-MC", node::blue);
 			break;
